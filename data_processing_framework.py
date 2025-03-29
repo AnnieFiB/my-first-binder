@@ -12,7 +12,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy.stats import chi2_contingency
 from scipy.stats import f_oneway
-
+from pathlib import Path
+from kaggle.api.kaggle_api_extended import KaggleApi
 
 
 def fetch_kaggle_dataset(search_query="human resources"):
@@ -26,14 +27,15 @@ def fetch_kaggle_dataset(search_query="human resources"):
     pd.DataFrame: Loaded dataset as a Pandas DataFrame.
     """
     # Dynamically resolve the Kaggle config directory
-    venv_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.myenv'))
-    kaggle_config_dir = os.path.join(venv_path, '.kaggle')
+    # Set credentials (replace with your method)
+    os.environ['KAGGLE_USERNAME'] = 'your_username'
+    os.environ['KAGGLE_KEY'] = 'your_api_key'
 
-    # Set the KAGGLE_CONFIG_DIR environment variable
-    os.environ['KAGGLE_CONFIG_DIR'] = kaggle_config_dir
-
+    # Authenticate
+    api = KaggleApi()
+    api.authenticate()
     # Authenticate with Kaggle API
-    kaggle.api.authenticate()
+    #kaggle.api.authenticate()
 
     # Search for datasets related to the query
     search_result = kaggle.api.dataset_list(search=search_query)
