@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Set API keys as environment variables
-echo "export OPENWEATHER_API_KEY=dd8cedb72349b0f32a7715bb048eea3b" >> ~/.bashrc
-echo "export YELP_API_KEY = gMMSPnJADvQ6GufClQHGBzDqMfealc4FYcWNAnf1l--y" >> ~/.bashrc
-echo "export GOOGLE_API_KEY=AIzaSyBCHlXdIA-MxB3VUm5WjqhZ3RPnZPAzvvc" >> ~/.bashrc
-
-# Ensure .bashrc is sourced for Jupyter
-echo "source ~/.bashrc" >> ~/.profile
