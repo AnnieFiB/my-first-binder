@@ -28,6 +28,8 @@ def fetch_kaggle_dataset(search_query="human resources"):
     """
     # Dynamically resolve the Kaggle config directory
     # Set credentials (replace with your method)
+    from dotenv import load_dotenv
+    load_dotenv()
     os.environ['KAGGLE_USERNAME'] = 'your_username'
     os.environ['KAGGLE_KEY'] = 'your_api_key'
 
