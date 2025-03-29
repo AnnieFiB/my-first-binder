@@ -71,6 +71,7 @@ jsonschema
 jupyter_client
 jupyter_core
 jupyterlab
+kaggle
 kiwisolver
 lxml
 markdown-it-py
@@ -86,6 +87,7 @@ numba
 numpy
 oauthlib
 openpyxl
+openml
 packaging
 pandas
 patsy
